@@ -5,6 +5,10 @@ class AddressesController < ApplicationController
   def fetch_coordinates
     @address = params["address"]
 
+    if @address == nil
+        @address ="corner Foster and Sheridan"
+    end
+
     @url_safe_address = URI.encode(@address)
 
 
